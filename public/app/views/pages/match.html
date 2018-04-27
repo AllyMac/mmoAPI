@@ -1,0 +1,54 @@
+<div class="jumbotron text-center">
+
+  <div ng-if="!main.loggedIn">
+    <p>Login to play a match</p>
+    <a href="/login" class="btn btn-primary">Login</a>
+  </div>
+
+  <div ng-if="main.loggedIn">
+    <h3> {{ main.user.username }} </h3>
+    <h4>{{ user.matchEdit.data.shipName }}</h4>
+
+
+    <img src="../../../assets/sprites/ship{{ user.matchEdit.data.shipNum }}.png"/>
+    <h4>Attack: {{ user.matchEdit.data.attack }}/100</h4>
+    <h4>Defence: {{ user.matchEdit.data.defence }}/100</h4>
+    <h4>Speed: {{ user.matchEdit.data.speed }}/100</h4>
+
+    <table class="table table-bordered table-striped" ng-show="user.users">
+      <thead>
+      <tr>
+
+        <th>Username</th>
+        <th>Ship</th>
+        <th>Attack</th>
+        <th>Defence</th>
+        <th>Speed</th>
+
+
+        <th class="col-sm-2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="person in user.users">
+
+        <td>{{ person.username }}</td>
+        <td>
+        <img src="../../../assets/sprites/ship{{ person.shipNum }}.png"/></td>
+        <td>{{ person.attack }}</td>
+        <td>{{ person.defence }}</td>
+        <td>{{ person.speed }}</td>
+
+        <td class="col-sm-2">
+          <a ng-href="/users/{{ user.matchEdit.data._id }}/matchResult/{{ person._id }}" class="btn btn-danger">Fight</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="jumbotron text-center">
+  <h1>Market Place</h1>
+  <h4>credits: {{ user.shipEdit.data.credits }}</h4>
+
+  <div ng-if="!main.loggedIn">
+    <p>Login to view the market place</p>
+    <a href="/login" class="btn btn-primary">Login</a>
+  </div>
+
+  <div ng-if="main.loggedIn">
+    <h3> Current Ship </h3>
+    <h4>{{ user.shipEdit.data.shipName }}</h4>
+
+
+    <img src="../../../assets/sprites/ship{{ user.shipEdit.data.shipNum }}.png"/>
+    <h4>Attack: {{ user.shipEdit.data.attack }}/100</h4>
+    <h4>Defence: {{ user.shipEdit.data.defence }}/100</h4>
+    <h4>Speed: {{ user.shipEdit.data.speed }}/100</h4>
+    <br><br>
+
+
+    <h3>Next Upgrade</h3>
+    <h4>{{ user.shipEdit.data.upgradeName }}</h4>
+    <img src="../../../assets/sprites/ship{{ user.shipEdit.data.upgradeShipNum }}.png"/>
+    <h4>Attack: {{ user.shipEdit.data.upgradeAttack }}/100</h4>
+    <h4>Defence: {{ user.shipEdit.data.upgradeDefence }}/100</h4>
+    <h4>Speed: {{ user.shipEdit.data.upgradeSpeed }}/100</h4>
+    <p><a href="#" ng-model="user.userData.attack" ng-click="user.shipUpgrade()"class="btn btn-primary">{{ user.shipEdit.data.upgradePrice }} Credits</a>
+    <br><br>
+
+
+
+
+  </div>
+</div>

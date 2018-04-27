@@ -1,0 +1,33 @@
+<div class="jumbotron text-center">
+
+    <div ng-if="!main.loggedIn">
+        <p>Login to play a match</p>
+        <a href="/login" class="btn btn-primary">Login</a>
+    </div>
+
+    <div ng-if="main.loggedIn">
+        <h3> {{ main.user.username }} </h3>
+
+
+        <img src="../../../assets/sprites/ship{{ user.matchEdit.data.shipNum }}.png"/>
+        <h4>Attack: {{ user.matchEdit.data.attack }}/100</h4>
+        <h4>Defence: {{ user.matchEdit.data.defence }}/100</h4>
+        <h4>Speed: {{ user.matchEdit.data.speed }}/100</h4>
+
+        <br>
+        <h2>VS</h2>
+        <br>
+
+        <img src="../../../assets/sprites/ship3.png"/>
+        <h4>Attack: 19/100</h4>
+        <h4>Defence: 21/100</h4>
+        <h4>Speed: 18/100</h4>
+
+
+
+
+
+
+
+    </div>
+</div>

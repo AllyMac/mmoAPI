@@ -1,0 +1,24 @@
+<div class="jumbotron text-center">
+  <h1>Profile</h1>
+  <h1>{{{ user.profile.data.credits }}</h1>
+  <tr ng-repeat="person in user.users">
+
+    <h3>credits: {{ user.profile.data.credits }}</h3>
+
+    <div ng-if="!main.loggedIn">
+      <p>Login to manage your profile</p>
+      <a href="/login" class="btn btn-primary">Login</a>
+    </div>
+
+    <div ng-if="main.loggedIn">
+      <p>Current Ship: {{ .shipName }} </p>
+      <img src="http://1.bp.blogspot.com/-0bW1MVCJEIg/Ufl5RpCzY8I/AAAAAAAAAzI/9sb4-Z-IVks/s1600/F5S1.png" alt="ship1">
+      <p>Attack: {{ main.user.attack }} </p>
+      <p>Defence: {{ main.user.defence }} </p>
+      <p>Speed: {{ main.user.speed }} </p>
+      <a href="/users" class="btn btn-primary">View Users</a>
+
+    </div>
+
+  </tr>
+</div>
